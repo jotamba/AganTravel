@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Log In Page</title>
+    <title>Register Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
@@ -36,7 +36,7 @@
                         </ul>
                         
                         <span class="navbar-text"> <a href="Login.html" class="login">Log In</a></span>
-                        <a class="btn btn-light action-button" role="button" href="Registrasi.html">Register</a> 
+                        <a class="btn btn-light action-button" role="button" href="#">Register</a> 
                         </div> 
                 </div>
             </nav>
@@ -49,12 +49,12 @@
         <div class="row">
           <div class="col-lg-10 col-xl-9 mx-auto">
             <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
-              <div class="card-img-left-login d-none d-md-flex">
+              <div class="card-img-left-register d-none d-md-flex">
                 
               </div>
               <div class="card-body p-4 p-sm-5">
                 <h3 class="card-title text-center mb-5 fw-light fs-5">
-                    <strong>Login</strong>
+                    <strong>Register</strong>
                 </h3>
                 <form>
     
@@ -62,10 +62,23 @@
                     <label for="floatingInputUsername">Username</label>
                     <input type="text" class="form-control" id="floatingInputUsername" placeholder="username" required autofocus>
                   </div>
+
+                  <div class="form-floating mb-3">
+                    <label for="floatingInputNama">Nama</label>
+                    <input type="text" class="form-control" id="floatingInputName" placeholder="Nama" required autofocus>
+                  </div>
     
                   <div class="form-floating mb-3">
-                    <label for="floatingInputEmail">Email address</label>
+                    <label for="floatingInputEmail">Email</label>
                     <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@email.com">
+                  </div>
+
+                  
+
+                  <div class="form-floating mb-3">
+                    <label for="floatingPhoneNumber">No Telepon</label>
+                    
+                    <input type="email" class="form-control" id="floatingInputPhoneNumber" placeholder="08XXXXXXXXXX">
                   </div>
     
                   <div class="form-floating mb-3">
@@ -73,37 +86,28 @@
                     <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
                   </div>
 
-                  <div class="d-flex justify-content-between align-items-center mb-4">
-                    <!-- Checkbox -->
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        value=""
-                        id="form1Example3"
-                        checked
-                      />
-                      <label class="form-check-label" for="form1Example3"> Remember me </label>
-                    </div>
-                    <a href="#!">Forgot password?</a>
+                  <div class="form-floating mb-3">
+                    <label for="floatingConfirmPassword">Confirm Password</label>
+                    <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm Password">
                   </div>
     
                   <div class="d-grid mb-2 loginbtn">
-                    <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">Log In</button>
+                    <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">Register Now</button>
                   </div>
     
-                  <p class="d-block text-center mt-2 small">Don't have an account?<a href="Registrasi.html"> Register</a></p>
+                  <p class="d-block text-center mt-2 small">Have an account?<a href="Login.html"> Login</a></p>
+    
                   <hr class="my-4">
     
                   <div class="d-grid mb-2 loginaccount">
                     <button class="btn btn-lg btn-google btn-login fw-bold text-uppercase" type="submit">
-                      <i style="font-size: 24px" class="fa fa-google me-2" ></i> Masuk dengan Google
+                      <i style="font-size: 24px" class="fa fa-google me-2" ></i> Sign Up dengan Google
                     </button>
                   </div>
     
                   <div class="d-grid loginaccount">
                     <button class="center btn btn-lg btn-facebook btn-login fw-bold text-uppercase" type="submit">
-                      <i style="font-size: 24px" class="fa fa-facebook-official me-2"></i> Masuk dengan Facebook
+                      <i style="font-size: 24px" class="fa fa-facebook-official me-2"></i> Sign Up dengan Facebook
                     </button>
                   </div>
     
