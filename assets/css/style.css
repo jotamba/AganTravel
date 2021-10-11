@@ -156,12 +156,16 @@ body {
   width: 45%;
   background: scroll center url('https://images.unsplash.com/photo-1633103895674-48112c9d5349?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=luka-verc-bd9gQFT3Rzo-unsplash.jpg');
   background-size: cover;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 
 .card-img-left-register{
   width: 45%;
   background: scroll center url('https://images.unsplash.com/photo-1536152470836-b943b246224c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=aron-visuals-LSFuPFE9vKE-unsplash.jpg');
   background-size: cover;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 
 
