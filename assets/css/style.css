@@ -153,7 +153,7 @@ body {
 
 .card-img-left-login{
   width: 45%;
-  background: scroll center url('https://images.unsplash.com/photo-1633103895674-48112c9d5349?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=luka-verc-bd9gQFT3Rzo-unsplash.jpg');
+  background: scroll center url('../../assets/img/background/bgLogin.jpg');
   background-size: cover;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -161,7 +161,7 @@ body {
 
 .card-img-left-register{
   width: 45%;
-  background: scroll center url('https://images.unsplash.com/photo-1536152470836-b943b246224c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=aron-visuals-LSFuPFE9vKE-unsplash.jpg');
+  background: scroll center url('../../assets/img/background/bgRegister.jpg');
   background-size: cover;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -180,4 +180,8 @@ body {
   font-size: 0.9rem;
   letter-spacing: 0.05rem;
   padding: 0.75rem 1rem;
+}
+
+.mastfoot {
+  color: rgba(255, 255, 255, .5);
 }
