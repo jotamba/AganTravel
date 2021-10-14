@@ -205,28 +205,25 @@
   /* Pesawat Booking */
   .card {
     margin: auto;
-    border: solid 1px #dbdad7;
     width: 60%;
-    padding-left: 10px !important;
-    padding-bottom: 10px !important;
-    padding-right: 10px !important;
-    padding-top: 0px !important
   }
   
   .card-title {
-    margin: auto;
     padding: 15px;
     background-color: #2f7fad;
     color: white;
-    width: 80%
+    width: 100%;
   }
   
-  div.card-body {
-    padding: 0px
+  .card-body {
+    padding-left: 20px !important;
+    padding-bottom: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 0px !important;
   }
   
   .custom-select {
-    width: 100%
+    width: 100%;
   }
   
   .btn2 {
