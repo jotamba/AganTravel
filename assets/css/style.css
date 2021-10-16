@@ -203,10 +203,14 @@ body {
 }
 
 .warna-bg{
-  background: linear-gradient(to right, rgba(91,134,229, .92), rgba(54,209,220, .92));
+  background:linear-gradient(135deg, #172a74, #21a9af);
+  background-color:#184e8e;
 }
 
 .jumbotron-bg{
   background-size: cover;
-  background: url(../img/inline_image_preview.jpg);
+}
+
+.card{
+  background: #007bff;
 }
