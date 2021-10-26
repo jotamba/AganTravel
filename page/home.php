@@ -52,7 +52,7 @@
 
         <span class="navbar-text mr-2">
           <a href="profil.php" class="login">Profil</a></span>
-        <a class="btn btn-light action-button" role="button" href="logoutProcess.php">Log Out</a>
+        <a class="btn btn-light action-button" role="button" href="../process/logoutProcess.php">Log Out</a>
       </div>
     </nav>
   </div>
@@ -75,7 +75,7 @@
           <div class="card-body">
             <h5 class="card-title">Lihat Profil</h5>
             <p class="card-text">Cek Profil anda di sini</p>
-            <a href="profil.html" class="btn btn-secondary">Here</a>
+            <a href="profil.php" class="btn btn-secondary">Here</a>
           </div>
         </div>
       </div>
@@ -84,7 +84,7 @@
           <div class="card-body">
             <h5 class="card-title">Booking List</h5>
             <p class="card-text">Cek Booking anda di sini</p>
-            <a href="bookinglist.html" class="btn btn-secondary">Here</a>
+            <a href="bookingList.php" class="btn btn-secondary">Here</a>
           </div>
         </div>
       </div>

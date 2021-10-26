@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
-  <link rel="stylesheet" href="../assets/css/styleprofilenav.css" />
+  <!-- <link rel="stylesheet" href="../assets/css/styleprofilenav.css" /> -->
 </head>
 
 <body>
@@ -55,12 +55,12 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="profil.php" class="nav-link active text-white" aria-current="page">
+              <a href="profil.php" class="nav-link text-white" aria-current="page">
                 <i class="fa fa-user-circle-o"></i><span class="ms-2">Profile</span>
               </a>
             </li>
             <li>
-              <a href="bookingList.php" class="nav-link text-white">
+              <a href="bookingList.php" class="nav-link active text-white">
                 <i class="fa fa-first-order"></i><span class="ms-2">My Orders</span>
               </a>
             </li>
