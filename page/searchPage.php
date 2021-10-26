@@ -78,7 +78,7 @@
 
         <span class="navbar-text mr-2">
           <a href="profil.php" class="login">Profil</a></span>
-        <a class="btn btn-light action-button" role="button" href="logoutProcess.php">Log Out</a>
+        <a class="btn btn-light action-button" role="button" href="../process/logoutProcess.php">Log Out</a>
       </div>
     </nav>
   </div>

@@ -1,9 +1,10 @@
 <?php
   session_start();
+  $_SESSION['isLogin'] = false;
   if ($_SESSION['isLogin']) {
     header("location: page/home.php");
   } else {
-    include('../process/db.php');
+    include('process/db.php');
   }
 ?>
 <!DOCTYPE html>
