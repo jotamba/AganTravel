@@ -1,7 +1,15 @@
+<?php
+  session_start();
+  if ($_SESSION['isLogin']) {
+    header("location: page/home.php");
+  } else {
+    include('../process/db.php');
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Activation Page</title>
+    <title>AganTravel.com</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -12,7 +20,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/cover.css" />
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -28,13 +36,14 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript" src="scripts\script.js"></script>
   </head>
 
   <body>
     <!-- navbar -->
-    <div class="header-blue">
+    <div class="header-blue fixed-top">
       <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
-        <a class="navbar-brand" href="index.html">AganTravel.com</a
+        <a class="navbar-brand" href="index.php">AganTravel.com</a
         ><button
           class="navbar-toggler"
           data-toggle="collapse"
@@ -46,7 +55,7 @@
         <div class="collapse navbar-collapse" id="navcol-1">
           <ul class="nav navbar-nav">
             <li class="nav-item" role="presentation">
-              <a class="nav-link active" href="pesawat.html">Pesawat</a>
+              <a class="nav-link active" href="page/pesawat.php">Pesawat</a>
             </li>
           </ul>
 
@@ -76,55 +85,33 @@
           </ul>
 
           <span class="navbar-text mr-2">
-            <a href="login.html" class="login">Log In</a></span
+            <a href="page/login.php" class="login">Log In</a></span
           >
           <a
             class="btn btn-light action-button"
             role="button"
-            href="registrasi.html"
+            href="page/registrasi.php"
             >Register</a
           >
         </div>
       </nav>
     </div>
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-8 col-xl-7 mx-auto">
-          <div
-            class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden"
-          >
-            <div class="card-body p-4 p-sm-5">
-              <div class="d-flex justify-content-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="72"
-                  height="72"
-                  fill="currentColor"
-                  class="bi bi-x"
-                  viewBox="0 0 16 16"
-                  style="color: red"
-                >
-                  <path
-                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
-                  />
-                </svg>
-              </div>
-              <div class="d-flex justify-content-center mt-2">
-                <b>Akun anda belum diaktivasi</b>
-              </div>
-              <div class="d-flex justify-content-center mt-2">
-                E-Mail : xxxxxx@example.com
-              </div>
-              <div class="d-flex justify-content-center mt-4">
-                <button class="btn btn-primary fw-bold" type="button">
-                  Kirim Email Aktivasi
-                </button>
-              </div>
-            </div>
-          </div>
+    <div class="cover-container d-flex w-100 h-100 pt-5 mx-auto flex-column text-center bg">
+
+      <main role="main" class="inner cover pt-5 mt-5">
+        <h1 class="cover-heading pt-5 mt-5">AganTravel.com</h1>
+        <p class="lead">Travel Anti-PHP</p>
+        <!-- <p class="lead">
+          <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+        </p> -->
+      </main>
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>Tubes PAW <b>@2021</b></p>
         </div>
-      </div>
+      </footer>
     </div>
   </body>
 </html>
