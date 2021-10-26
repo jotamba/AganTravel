@@ -1,3 +1,6 @@
+<?php
+  include '../process/db.php'
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,7 +31,7 @@
     <!-- Habis -->
 
 
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
 
   <body>
