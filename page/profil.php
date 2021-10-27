@@ -52,24 +52,22 @@ if (!$_SESSION['isLogin']) {
             </a>
 
             <ul class="nav nav-pills flex-column mb-auto">
-              <a href="#" class="d-flex align-items-center text-white">
-                <img src="http://logo.uajy.ac.id/file/uploads/2021/08/UAJY-LOGOGRAM_-01.png" alt="" width="32" height="32" class="rounded-circle me-2" />
-                <strong> Kelompok B </strong>
-              </a>
-              <br />
-              <li class="nav-item">
-                <a href="home.php" class="nav-link text-white" aria-current="page">
-                  <i class="bx bx-grid-alt"></i><span class="ms-2">Home</span>
-                </a>
+            <li class="nav-item mb-3">
+                  <h5 class="nav-link text-warning"><strong> AganTravel.com </strong></h5>
               </li>
               <li class="nav-item">
                 <a href="profil.php" class="nav-link text-primary" aria-current="page">
                   <i class="fa fa-user-circle-o"></i><span class="ms-2">Profile</span>
                 </a>
               </li>
-              <li>
+              <li class="nav-item">
                 <a href="bookingList.php" class="nav-link text-white">
                   <i class="fa fa-first-order"></i><span class="ms-2">My Orders</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="home.php" class="nav-link text-white" aria-current="page">
+                <i class="fa fa-arrow-left"></i><span class="ms-2">Back</span>
                 </a>
               </li>
             </ul>
@@ -109,7 +107,7 @@ if (!$_SESSION['isLogin']) {
               </div>
               <div class="py-3 pb-4 border-bottom">
                 <button class="btn btn-primary me-2" type="submit" name="saveChanges">Save Changes</button>
-                <a href="../process/deleteProfilProcess.php" onClick="return confirm ( 'Yakin?')">
+                <a href="../process/deleteProfilProcess.php" onclick="return confirm ( 'Yakin?')">
                   <button class="btn btn-danger" type="button">Delete Account</button>
                 </a>
               </div>

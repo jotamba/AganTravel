@@ -109,10 +109,10 @@ if (!$_SESSION['isLogin']) {
                 </select> </div>
             </div>
 
-            <div class="row">
+            <div class="row mb-4">
               <div class="col"> <input placeholder="Jumlah Penumpang" type="text" class="form-control" style="font-family:Arial, FontAwesome"> </div>
             </div>
-            <a href="bookingList.php" class="btn btn-primary d-flex justify-content-center mt-4">Place Booking</a>
+            <a href="bookingList.php" class="btn btn-primary d-flex justify-content-center  mt-2">Save Changes</a>
             <!-- <button href="#" class="btn btn-primary d-flex justify-content-center  mt-2">Temukan Penerbangan</small>
           </button> -->
           </div>
