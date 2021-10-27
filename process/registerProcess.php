@@ -18,18 +18,21 @@ if (isset($_POST['register'])) {
     $email = $_POST['email'];
     $noTelepon = $_POST['noTelepon'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $isVerified = false;
+    $isVerified = 0;
     $code = md5($email.date('Y-m-d'));
 
     $sql = "SELECT * FROM users where email='$email'";
     $query = mysqli_query($con,$sql);
     if(mysqli_num_rows($query) > 0){
-        echo '<script>alert("Email sudah terdaftar");</script>';
+        echo '<script>alert("Email sudah terdaftar"); window.history.back()</script>';
     }else {
-        $sql = "INSERT INTO users(username, nama, email, noTelepon, password, isVerified, verif_code)
+        $query = mysqli_query(
+            $con,
+            "INSERT INTO users(username, nama, email, noTelepon, password, isVerified, verif_code)
         VALUES
-        ('$username', '$nama', '$email', '$noTelepon', '$password', '$isVerified', '$code')";
-        $query = mysqli_query($con,$sql);
+        ('$username', '$nama', '$email', '$noTelepon', '$password', '$isVerified', '$code')"
+        )
+            or die(mysqli_error($con)); 
 
         //Create a new PHPMailer instance
         $mail = new PHPMailer;
@@ -87,7 +90,7 @@ if (isset($_POST['register'])) {
         if (!$mail->send()) {
             echo
         '<script>
- alert("Failed to Send Email");
+ alert("Failed to Send Email"); window.history.back()
  </script>';
         } else {
             echo
