@@ -73,54 +73,50 @@ if (!$_SESSION['isLogin']) {
             </div>
             <p class="text-center mt-2"><strong>Informasi Booking</strong></p>
             <hr>
+            <?php
+                if (isset($_GET['id'])) {
 
-            <div class="row">
-              <div class="col-sm-6"> <select class="browser-default custom-select mb-4" id="select">
-                  <option value="" disabled="" selected="">Asal Kota/Bandara</option>
-                  <option value="1">Yogjakarta</option>
-                  <option value="2">Pekanbaru</option>
-                  <option value="3">Bali</option>
-                </select> </div>
-              <div class="col-sm-6"> <select class="browser-default custom-select mb-4" id="select">
-                  <option value="" disabled="" selected="">Kota/Bandara Tujuan</option>
-                  <option value="1">Yogyakarta</option>
-                  <option value="2">Pekanbaru</option>
-                  <option value="3">Bali</option>
-                </select> </div>
-            </div>
+                  $id = $_GET['id'];
 
-            <div class="row">
-              <div class="col-sm-6"> <input placeholder="&#xf073; Berangkat" type="text" id="date-picker" class="form-control datepicker mb-4" style="font-family:Arial, FontAwesome"> </div>
-              <div class="col-sm-6"> <input placeholder="&#xf073; Tiba" type="text" id="date-picker" class="form-control datepicker" style="font-family:Arial, FontAwesome"> </div>
-            </div>
+                  $query = mysqli_query($con, "SELECT * FROM penerbangan WHERE id = '$id'") or die(mysqli_error($con));
 
-            <div class="row">
-              <div class="col-sm-6"> <select class="browser-default custom-select mb-4" id="select">
-                  <option value="" disabled="" selected="">Waktu</option>
-                  <option value="1">6:00 AM</option>
-                  <option value="2">3:00 PM</option>
-                  <option value="3">6:00 PM</option>
-                </select> </div>
-              <div class="col-sm-6"> <select class="browser-default custom-select mb-4" id="select">
-                  <option value="" disabled="" selected="">Waktu</option>
-                  <option value="1">6:00 AM</option>
-                  <option value="2">3:00 PM</option>
-                  <option value="3">6:00 PM</option>
-                </select> </div>
-            </div>
+                  if (mysqli_num_rows($query) == 0) {
+                    echo '
+                      <div class="d-flex justify-content-center p-1">
+                        <div>
+                          <h2><i class="fa fa-plane"></i><strong> Error </strong> </h2>
+                        </div>
+                      </div>
+                    ';
+                  } else {
+                    while ($data = mysqli_fetch_assoc($query)) {
+                      echo '
+                        <div class="d-flex justify-content-between p-1">
+                          <div>
+                            <h5><i class="fa fa-plane"></i><strong> ' . $data['kode'] . ' | ' . $data['asal'] . ' - '. $data['tujuan'] .' </strong> </h5>
+            
+                            <h6>Rp ' . $data['harga'] . ' / person</h6>
+                            <p>' . $data['tanggal'] . ' | ' . $data['waktu'] . '</p>
+                          </div>
+                        </div>
+                      ';
+                    }
+                  }
+                }
+              ?>
 
-            <div class="row">
-              <div class="col"> <input placeholder="Jumlah Penumpang" type="text" class="form-control" style="font-family:Arial, FontAwesome"> </div>
-            </div>
-            <a href="bookingList.php" class="btn btn-primary d-flex justify-content-center mt-4">Place Booking</a>
-            <!-- <button href="#" class="btn btn-primary d-flex justify-content-center  mt-2">Temukan Penerbangan</small>
-          </button> -->
+            <form action="../process/bookingProcess.php?id=<?php echo (isset($id)) ? $id : '' ?>" method="post">
+              <div class="row">
+                <div class="col"> <input placeholder="Jumlah Penumpang" type="text" class="form-control" style="font-family:Arial, FontAwesome" name="jumlah"> </div>
+              </div>
+              <button type="submit" class="btn btn-primary d-flex justify-content-center mt-4 form-control" name="placeBooking">Place Booking</a>
+            </form>
+
           </div>
         </div>
       </div>
     </div>
   </div>
-
 
   <footer class="mastfoot mt-auto d-flex justify-content-center">
     <div class="inner">

@@ -66,60 +66,77 @@ if (!$_SESSION['isLogin']) {
       <div class="col-sm-10">
         <div class="card-title text-center shadow rounded p-2" style="background-color: #2f7fad; color: white;">
           <h2><strong>List Penerbangan</strong></h2>
-          <h3>Pekanbaru - Yogyakarta</h3>
+          <?php
+            if (isset($_POST['temukan'])) {
+
+              $asal = $_POST['asal'];
+              $tujuan = $_POST['tujuan'];
+
+              echo '<h3>' . $asal . ' - ' . $tujuan . '</h3>';
+            }
+          ?>
         </div>
       </div>
       <div class="col-sm-2 text-center">
-        <a href="pesawat.html" class="btn btn-primary form-control">
+        <a href="pesawat.php" class="btn btn-primary form-control">
           <i class="fa fa-search"></i>
           Change Search
         </a>
       </div>
     </div>
 
-    <div class="row mb-3">
-      <div class="col-sm-10">
-        <div class="card-body text-left shadow rounded p-3" style="background-color: white; color: black">
-          <div class="d-flex justify-content-between p-1">
-            <div>
-              <h2><i class="fa fa-plane"></i><strong> P001 </strong> </h2>
 
-              <h6>Rp 1.800.000,00 / person</h6>
-              <p>Rabu, 20 Oktober 2021 | 07:20 - 09:20</p>
+    <?php
+      if (isset($_POST['temukan'])) {
+
+        $asal = $_POST['asal'];
+        $tujuan = $_POST['tujuan'];
+
+        $query = mysqli_query($con, "SELECT * FROM penerbangan WHERE asal = '$asal' AND tujuan = '$tujuan'") or die(mysqli_error($con));
+
+        if (mysqli_num_rows($query) == 0) {
+          echo '
+            <div class="row mb-3">
+              <div class="col-sm-10">
+                <div class="card-body text-left shadow rounded p-3" style="background-color: white; color: black">
+                  <div class="d-flex justify-content-center p-1">
+                    <div>
+                      <h2>Tidak ada penerbangan</h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div>
-              <a href="checkOut.php" class="btn btn-primary">
-                Book Flight
-              </a>
-            </div>
-          </div>
-
-
-        </div>
-      </div>
-    </div>
-
-    <div class="row mb-3">
-      <div class="col-sm-10">
-        <div class="card-body text-left shadow rounded p-3" style="background-color: white; color: black">
-          <div class="d-flex justify-content-between p-1">
-            <div>
-              <h2><i class="fa fa-plane"></i><strong> P002 </strong> </h2>
-
-              <h6>Rp 1.300.000,00 / person</h6>
-              <p>Rabu, 20 Oktober 2021 | 08:40 - 10:55</p>
-            </div>
-            <div>
-              <a href="checkOut.php" class="btn btn-primary">
-                Book Flight
-              </a>
-            </div>
-          </div>
-
-
-        </div>
-      </div>
-    </div>
+          ';
+        } else {
+          while ($data = mysqli_fetch_assoc($query)) {
+            echo '
+              <div class="row mb-3">
+                <div class="col-sm-10">
+                  <div class="card-body text-left shadow rounded p-3" style="background-color: white; color: black">
+                    <div class="d-flex justify-content-between p-1">
+                      <div>
+                        <h2><i class="fa fa-plane"></i><strong> ' . $data['kode'] . ' </strong> </h2>
+          
+                        <h6>Rp ' . $data['harga'] . ' / person</h6>
+                        <p>' . $data['tanggal'] . ' | ' . $data['waktu'] . '</p>
+                      </div>
+                      <div>
+                        <a href="checkOut.php?id=' . $data['id'] . '" class="btn btn-primary">
+                          Book Flight
+                        </a>
+                      </div>
+                    </div>
+          
+          
+                  </div>
+                </div>
+              </div>
+            ';
+          }
+        }
+      }
+    ?>
 
 
     <footer class="mastfoot mt-5 d-flex justify-content-center">
