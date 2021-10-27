@@ -10,7 +10,7 @@
 <html lang="en">
 
 <head>
-  <title>AganTravel.com - Hotel</title>
+  <title>AganTravel.com - Pesawat</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
@@ -66,29 +66,13 @@
       <div class="col-lg-10 col-xl-9 mx-auto">
         <div class="card border-0">
           <p class="card-title text-center shadow rounded p-2" style="background-color: #2f7fad; color: white;">
-            AganTravel Booking Form <br><strong>Travel Anti PHP</strong></p>
+            AganTravel Search Form <br><strong>Travel Anti PHP</strong></p>
           <div class="card-body">
             <div class="icons text-center">
               <i class="fa fa-plane fa-2x" aria-hidden="true"></i>
             </div>
             <p class="text-center mt-2"><strong>Cari Penerbangan</strong></p>
             <hr>
-
-            <div class="row mb-3">
-              <div class="col">
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <label class="input-group-text" for="inputGroupSelect01">Jenis Penerbangan</label>
-                  </div>
-                  <select class="custom-select" id="inputGroupSelect01">
-                    <option selected>Choose...</option>
-                    <option value="1">Satu Arah</option>
-                    <option value="2">Pulang Pergi</option>
-                  </select>
-                </div>
-              </div>
-
-            </div>
 
 
 
@@ -107,47 +91,8 @@
                 </select> </div>
             </div>
 
-            <div class="row">
-              <div class="col-sm-6"> <input placeholder="&#xf073; Berangkat" type="text" id="date-picker" class="form-control datepicker mb-4" style="font-family:Arial, FontAwesome"> </div>
-              <div class="col-sm-6"> <input placeholder="&#xf073; Tiba" type="text" id="date-picker" class="form-control datepicker" style="font-family:Arial, FontAwesome"> </div>
-            </div>
-
-            <div class="row mt-4">
-              <div class="col-sm-6"> <select class="browser-default custom-select mb-4" id="select">
-                  <option value="" disabled="" selected="">Waktu</option>
-                  <option value="1">6:00 AM</option>
-                  <option value="2">3:00 PM</option>
-                  <option value="3">6:00 PM</option>
-                </select> </div>
-              <div class="col-sm-6"> <select class="browser-default custom-select mb-4" id="select">
-                  <option value="" disabled="" selected="">Waktu</option>
-                  <option value="1">6:00 AM</option>
-                  <option value="2">3:00 PM</option>
-                  <option value="3">6:00 PM</option>
-                </select> </div>
-            </div>
-
-            <div class="row">
-              <div class="col-sm-4"> <select class="browser-default custom-select mb-4" id="select">
-                  <option value="" disabled="" selected="">Anak(0-14)</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </select> </div>
-              <div class="col-sm-4"> <select class="browser-default custom-select mb-4" id="select">
-                  <option value="" disabled="" selected="">Dewasa(15-64)</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </select> </div>
-              <div class="col-sm-4"> <select class="browser-default custom-select mb-4" id="select">
-                  <option value="" disabled="" selected="">Lansia(65+)</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </select> </div>
-            </div>
-            <a href="#" class="btn btn-primary d-flex justify-content-center  mt-2">Temukan Penerbangan</a>
+            
+            <a href="searchPage.php" class="btn btn-primary d-flex justify-content-center  mt-2">Temukan Penerbangan</a>
             <!-- <button href="#" class="btn btn-primary d-flex justify-content-center  mt-2">Temukan Penerbangan</small>
           </button> -->
           </div>

@@ -24,7 +24,7 @@ if (!$_SESSION['isLogin']) {
 
 <body>
   <div class="container-fluid">
-    <div class="row mr-3">
+    <div class="row">
       <div class="col-3 overflow-hidden">
         <nav class="sidebar">
           <div class="
@@ -45,31 +45,29 @@ if (!$_SESSION['isLogin']) {
             </a>
 
             <ul class="nav nav-pills flex-column mb-auto">
-              <a href="#" class="d-flex align-items-center text-white">
-                <img src="http://logo.uajy.ac.id/file/uploads/2021/08/UAJY-LOGOGRAM_-01.png" alt="" width="32" height="32" class="rounded-circle me-2" />
-                <strong> Kelompok B </strong>
-              </a>
-              <br />
-              <li class="nav-item">
-                <a href="home.php" class="nav-link text-white" aria-current="page">
-                  <i class="bx bx-grid-alt"></i><span class="ms-2">Home</span>
-                </a>
+              <li class="nav-item mb-3">
+                  <h5 class="nav-link text-warning"><strong> AganTravel.com </strong></h5>
               </li>
               <li class="nav-item">
                 <a href="profil.php" class="nav-link text-white" aria-current="page">
                   <i class="fa fa-user-circle-o"></i><span class="ms-2">Profile</span>
                 </a>
               </li>
-              <li>
+              <li class="nav-item">
                 <a href="bookingList.php" class="nav-link text-primary">
                   <i class="fa fa-first-order"></i><span class="ms-2">My Orders</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="home.php" class="nav-link text-white" aria-current="page">
+                <i class="fa fa-arrow-left"></i><span class="ms-2">Back</span>
                 </a>
               </li>
             </ul>
           </div>
         </nav>
       </div>
-      <div class="col-8">
+      <div class="col-9 p-0">
         <div class="mt-5 me-5">
           <br>
           <h2 class="text-center">My Order</h2>
@@ -77,62 +75,34 @@ if (!$_SESSION['isLogin']) {
 
           <table class="table table-bordered">
             <tr>
-              <th>No Order</th>
               <th>No Penerbangan</th>
-              <th>Nama Penumpang</th>
               <th>Kota Asal</th>
               <th>Kota Tujuan</th>
               <th>Tanggal Penerbangan</th>
               <th>Waktu Penerbangan</th>
+              <th>Jumlah</th>
               <th>Harga</th>
+              <th>Action</th>
             </tr>
 
-            <!-- @if(count($data_order))
-              @foreach ($data_order as $dpo) -->
+            <tr>
+              <td>GA1456</td>
+              <td>Yogyakarta</td>
+              <td>Jakarta</td>
+              <td>27 Oktober 2021</td>
+              <td>09:00 - 12:00 WIB</td>
+              <td>2</td>
+              <td>400.000</td>
+              <td class="text-center">
+                <a href="#"><i style="color: green" class="fa fa-edit"></i></a>
+                <a href="#" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')"><i style="color: red" class="fa fa-trash"></i></a>
+              </td>
+            </tr>
 
-            <!-- <tr>
-                  <td>{{ $dpt->nip}}</td>
-                  <td>{{ $dpt->nama_pegawai}}</td>
-                  <td>{{ $dpt->departemen->nama_departemen}}</td>
-                  <td>{{ $dpt->email}}</td>
-                  <td>{{ $dpt->telepon}}</td>
-              </tr> -->
-
-            <!-- @endforeach  -->
-            <!-- @else -->
             <tr>
               <td align="center" colspan="8">Empty Data!! Have a Nice Day</td>
             </tr>
-            <!-- @endif -->
           </table>
-          <!-- <div class="container">
-              <div  class="d-flex justify-content-center">{{ $data_pegawai->links() }}</div>
-          </div> -->
-          <!-- <div class="container">
-            <div class="row">
-              <div class="col-md-3 mb-2">
-                <div class="card border-secondary">
-                  <div class="card-body">
-                    <h6 class="card-title text-info">Booking Pesawat</h6>
-                    <div class="form-group">
-                      <strong>Jenis Penerbangan</strong>
-                    </div>
-                    <div class="form-group">
-                      <strong>Asal</strong>
-                    </div>
-                    <div class="form-group">
-                      <strong>Tujuan</strong>
-                    </div>
-                    <div class="form-group">
-                      <strong>Waktu</strong>
-                    </div>
-                    <div class="form-group">
-                      <strong>Penumpang</strong>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
         </div>
 
       </div>
