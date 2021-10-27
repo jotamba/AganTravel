@@ -126,8 +126,8 @@ if (!$_SESSION['isLogin']) {
                       <td>'. $data['harga'] .'</td>
                       <td>'. $data['total_harga'] .'</td>
                       <td class="text-center">
-                        <a href="#"><i style="color: green" class="fa fa-edit"></i></a>
-                        <a href="#" onclick="return confirm(\'Apakah anda yakin ingin menghapus data ini?\')"><i style="color: red" class="fa fa-trash"></i></a>
+                        <a href="editBooking.php?id='. $data['id'] .'"><i style="color: green" class="fa fa-edit"></i></a>
+                        <a href="../process/deleteBookingProcess.php?id='. $data['id'] .'" onclick="return confirm(\'Apakah anda yakin ingin menghapus data ini?\')"><i style="color: red" class="fa fa-trash"></i></a>
                       </td>
                     </tr>
                   ';
