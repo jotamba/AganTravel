@@ -21,14 +21,23 @@ if (isset($_POST['login'])) {
         if (password_verify($password, $user['password'])) {
             // session adalah variabel global sementara yang disimpen di server
             // buat mulai sessionnya pake session_start()
-            session_start();
             //isLogin ini temp variable yang gunanya buat ngecek nanti apakah sdh login ato belum
-            $_SESSION['isLogin'] = true;
-            $_SESSION['user'] = $user;
-            echo
+
+            if($user['isVerified']==1){
+                session_start();
+                $_SESSION['isLogin'] = true;
+                $_SESSION['user'] = $user;
+    
+                echo
             '<script>
 alert("Login Success"); window.location = "../page/home.php"
  </script>';
+            }else {
+                echo
+            '<script>
+alert("Verif Email dulu gan!"); window.location = "../page/login.php"
+ </script>';
+            }
         } else {
             echo
             '<script>
