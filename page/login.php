@@ -47,29 +47,6 @@
           </ul>
 
           <form class="form-inline mr-auto" target="_self"></form>
-          <ul class="nav navbar-nav">
-            <li class="nav-item dropdown">
-              <a
-                class="dropdown-toggle nav-link"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-                href="#"
-                >Bantuan
-              </a>
-              <div class="dropdown-menu" role="menu">
-                <a class="dropdown-item" role="presentation" href="#"
-                  >First Item</a
-                >
-                <a class="dropdown-item" role="presentation" href="#"
-                  >Second Item</a
-                >
-                <a class="dropdown-item" role="presentation" href="#"
-                  >Third Item</a
-                >
-              </div>
-            </li>
-          </ul>
 
           <span class="navbar-text mr-2">
             <a href="login.php" class="login">Log In</a></span
