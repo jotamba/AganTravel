@@ -1,10 +1,10 @@
 <?php
-  session_start();
-  if (!$_SESSION['isLogin']) {
-    header("location: login.php");
-  } else {
-    include('../process/db.php');
-  }
+session_start();
+if (!$_SESSION['isLogin']) {
+  header("location: login.php");
+} else {
+  include('../process/db.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,24 +75,38 @@
             <hr>
 
 
+            <form action="searchPage.php" method="post">
+              <div class="row">
+                <div class="col-sm-6"> <select class="browser-default custom-select mb-4" id="select" name="asal">
+                    <option value="" disabled="" selected="">Asal Kota/Bandara</option>
 
-            <div class="row">
-              <div class="col-sm-6"> <select class="browser-default custom-select mb-4" id="select">
-                  <option value="" disabled="" selected="">Asal Kota/Bandara</option>
-                  <option value="1">Yogjakarta</option>
-                  <option value="2">Pekanbaru</option>
-                  <option value="3">Bali</option>
-                </select> </div>
-              <div class="col-sm-6"> <select class="browser-default custom-select mb-4" id="select">
-                  <option value="" disabled="" selected="">Kota/Bandara Tujuan</option>
-                  <option value="1">Yogyakarta</option>
-                  <option value="2">Pekanbaru</option>
-                  <option value="3">Bali</option>
-                </select> </div>
-            </div>
+                    <?php
+                      $qry = mysqli_query($con,"select distinct asal from penerbangan"); // select query
 
-            
-            <a href="searchPage.php" class="btn btn-primary d-flex justify-content-center  mt-2">Temukan Penerbangan</a>
+                      while($data = mysqli_fetch_array($qry)) {
+                        echo "<option value='".$data[0]."'>".$data[0]."</option>";
+                      }
+                    ?>
+                  </select> 
+                </div>
+                <div class="col-sm-6"> <select class="browser-default custom-select mb-4" id="select" name="tujuan">
+                    <option value="" disabled="" selected="">Kota/Bandara Tujuan</option>
+                    <?php
+                      $qry = mysqli_query($con,"select distinct tujuan from penerbangan"); // select query
+
+                      while($data = mysqli_fetch_array($qry)) {
+                        echo "<option value='".$data[0]."'>".$data[0]."</option>";
+                      }
+                    ?>
+                  </select> 
+                </div>
+              </div>
+
+
+              <button type="submit" class="btn btn-primary form-control mt-2" name="temukan">Temukan Penerbangan</button>
+
+            </form>
+
             <!-- <button href="#" class="btn btn-primary d-flex justify-content-center  mt-2">Temukan Penerbangan</small>
           </button> -->
           </div>

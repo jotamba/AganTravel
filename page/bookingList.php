@@ -4,6 +4,7 @@ if (!$_SESSION['isLogin']) {
   header("location: login.php");
 } else {
   include('../process/db.php');
+  $user = $_SESSION['user'];
 }
 ?>
 <!DOCTYPE html>
@@ -67,6 +68,7 @@ if (!$_SESSION['isLogin']) {
           </div>
         </nav>
       </div>
+      
       <div class="col-9 p-0">
         <div class="mt-5 me-5">
           <br>
@@ -82,10 +84,11 @@ if (!$_SESSION['isLogin']) {
               <th>Waktu Penerbangan</th>
               <th>Jumlah</th>
               <th>Harga</th>
+              <th>Total Harga</th>
               <th>Action</th>
             </tr>
 
-            <tr>
+            <!-- <tr>
               <td>GA1456</td>
               <td>Yogyakarta</td>
               <td>Jakarta</td>
@@ -97,11 +100,40 @@ if (!$_SESSION['isLogin']) {
                 <a href="#"><i style="color: green" class="fa fa-edit"></i></a>
                 <a href="#" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')"><i style="color: red" class="fa fa-trash"></i></a>
               </td>
-            </tr>
+            </tr> -->
 
-            <tr>
-              <td align="center" colspan="8">Empty Data!! Have a Nice Day</td>
-            </tr>
+            <?php
+              $id_user = $user['id'];
+
+              $query = mysqli_query($con, "SELECT * FROM booking WHERE id_user = '$id_user'") or die(mysqli_error($con));
+
+              if (mysqli_num_rows($query) == 0) {
+                echo '
+                  <tr>
+                    <td align="center" colspan="9">Anda belum booking gan</td>
+                  </tr>
+                ';
+              } else {
+                while ($data = mysqli_fetch_assoc($query)) {
+                  echo '
+                    <tr>
+                      <td>'. $data['kode'] .'</td>
+                      <td>'. $data['asal'] .'</td>
+                      <td>'. $data['tujuan'] .'</td>
+                      <td>'. $data['tanggal'] .'</td>
+                      <td>'. $data['waktu'] .'</td>
+                      <td>'. $data['jumlah'] .'</td>
+                      <td>'. $data['harga'] .'</td>
+                      <td>'. $data['total_harga'] .'</td>
+                      <td class="text-center">
+                        <a href="#"><i style="color: green" class="fa fa-edit"></i></a>
+                        <a href="#" onclick="return confirm(\'Apakah anda yakin ingin menghapus data ini?\')"><i style="color: red" class="fa fa-trash"></i></a>
+                      </td>
+                    </tr>
+                  ';
+                }
+              }
+            ?>
           </table>
         </div>
 
